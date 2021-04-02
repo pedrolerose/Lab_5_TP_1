@@ -1,5 +1,7 @@
 package dominio;
 
+import java.util.Date;
+
 public class EntradaRecital extends Entrada {
 	
 	//properties
@@ -12,7 +14,9 @@ public class EntradaRecital extends Entrada {
 	
 	//constructors
 	
-	public EntradaRecital () {
+	public EntradaRecital (Date fechaEv, double tiempoDuracionEv) {
+		
+		super(fechaEv, tiempoDuracionEv);
 		
 		if(this.esVip) {
 			this.setPrecio(1500);	
