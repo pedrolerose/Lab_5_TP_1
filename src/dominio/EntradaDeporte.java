@@ -6,26 +6,55 @@ public class EntradaDeporte extends Entrada {
 
 	private String tipoDeporte;
 	private boolean nacional;
+	private final int PRECIO_ENTRADA_FUTBOL = 300;
+	private final int PRECIO_ENTRADA_RUGBY  = 450;
+	private final int PRECIO_ENTRADA_HOCKEY = 380;
+	private final double TASA_DE_AUMENTO_EVENTO_INTERNACIONAL = 1.30;
+	private final String OPCION_FUTBOL = "Futbol";
+	private final String OPCION_RUGBY  = "Rugby";
+	private final String OPCION_HOCKEY = "Hockey";
 	
-	public EntradaDeporte(Date fechaEv, double tiempoDuracionEv, String tipoDeporteEv, boolean nacionalEv) {
+	
+	public EntradaDeporte(Date fechaEv, int tiempoDuracionEv, String tipoDeporteEv, boolean nacionalEv) {
 		
 		super(fechaEv, tiempoDuracionEv);
-		
+		this.setNacional(nacionalEv);
 		switch (tipoDeporteEv) {
-		case "futbol" :
-			this.setPrecio(300);
-		break;
-		case "rugby":
-			this.setPrecio(450);
-		break;
-		case "hockey":
-			this.setPrecio(380);
-		break;
-		default:
-			System.out.println("Tipo de Deporte Incorrecto");
+		
+			case OPCION_FUTBOL :
+				this.setTipoDeporte(OPCION_FUTBOL);
+				this.setPrecio(getPrecioDeEventoInternacional(nacionalEv, PRECIO_ENTRADA_FUTBOL));
+			break;
 			
-			nacional = nacionaEv;
+			case OPCION_RUGBY:
+				this.setTipoDeporte(OPCION_RUGBY);
+				this.setPrecio(getPrecioDeEventoInternacional(nacionalEv, PRECIO_ENTRADA_RUGBY));
+			break;
+			
+			case OPCION_HOCKEY:
+				this.setTipoDeporte(OPCION_HOCKEY);
+				this.setPrecio(getPrecioDeEventoInternacional(nacionalEv, PRECIO_ENTRADA_HOCKEY));
+			break;
+			
+			default:
+				System.out.println("Tipo de Deporte Incorrecto");
+			break;	
+		
+		}
+		
 	}
+	
+	private double getPrecioDeEventoInternacional(boolean nacionalEv, double precio) {
+		double precioFinal;
+		if(nacionalEv) {
+			precioFinal = precio;  
+		} else {
+			precioFinal = precio * TASA_DE_AUMENTO_EVENTO_INTERNACIONAL;  
+		}
+		
+		return precioFinal;
+	}
+	
 	
 	public String getTipoDeporte() {
 		return tipoDeporte;
@@ -38,6 +67,23 @@ public class EntradaDeporte extends Entrada {
 	}
 	public void setNacional(boolean nacional) {
 		this.nacional = nacional;
+	}
+	
+	
+	public String toString() {
+		String isNacional = "";
+		
+		if(this.isNacional()) {
+			isNacional = "Si"; 
+		} else {
+			isNacional = "No";
+		}
+		
+		return "Id de entrada: " + this.getId() + " \n" 
+				+ "Tipo de deporte: " + this.getTipoDeporte() + " \n"
+ 				+ "Precio: $" + this.getPrecio() + " \n"
+				+ "Duracion: " + this.getTiempoDuracion() + " minutos \n"
+				+ "Nacional: " + isNacional + "\n -------------------------- \n";
 	}
 	
 	

@@ -7,16 +7,23 @@ public class EntradaInfantil extends Entrada {
 private int edad;
 private boolean souvenir;
 
-public EntradaInfantil(Date fechaEv, double tiempoDuracionEv,int edadN, boolean souvenirEv) {
+private final int EDAD_MAXIMA_MENORES = 8;
+private final int PRECIO_PARA_MENORES = 250;
+private final int PRECIO_PARA_MAYORES = 500;
+
+
+public EntradaInfantil(Date fechaEv, int tiempoDuracionEv,int edadN, boolean souvenirEv) {
 	
 	super(fechaEv, tiempoDuracionEv);
 	
-	if(edadN > 8) {
-		this.setPrecio(500);
+	if(edadN > EDAD_MAXIMA_MENORES) {
+		this.setPrecio(PRECIO_PARA_MAYORES);
 	}else {
-		this.setPrecio(250);
+		this.setPrecio(PRECIO_PARA_MENORES);
 	}
-	this.souvenir = souvenirEv;
+	
+	this.setSouvenir(souvenirEv);
+	
 }
 
 public int getEdad() {
@@ -31,5 +38,22 @@ public boolean isSouvenir() {
 public void setSouvenir(boolean souvenir) {
 	this.souvenir = souvenir;
 }
+
+public String toString() {
+	
+	String tieneSouvenir = "";
+	
+	if(this.isSouvenir()) {
+		tieneSouvenir = "Si"; 
+	} else {
+		tieneSouvenir = "No";
+	}
+	
+	return "Id de entrada: " + this.getId() + " \n" 
+			+ "Precio: $" + this.getPrecio() + " \n"
+			+ "Duracion: " + this.getTiempoDuracion() + " minutos \n"
+			+ "Tiene souvenir: " + tieneSouvenir + "\n -------------------------- \n";
+}
+
 
 }

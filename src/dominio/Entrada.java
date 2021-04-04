@@ -7,9 +7,18 @@ public class Entrada extends EntidadBase {
 	//properties
 	
 	private double precio;
-	private double tiempoDuracion;
+	private int tiempoDuracion;
+	private IGenero genero;
 	
-	public Entrada(Date fechaEv, double tiempoDuracionEv) {
+	public IGenero getGenero() {
+		return genero;
+	}
+
+	public void setGenero(IGenero genero) {
+		this.genero = genero;
+	}
+
+	public Entrada(Date fechaEv, int tiempoDuracionEv) {
 		
 		super(fechaEv);
 		
@@ -18,10 +27,10 @@ public class Entrada extends EntidadBase {
 	
 	//getters and setters
 	
-	public double getTiempoDuracion() {
+	public int getTiempoDuracion() {
 		return tiempoDuracion;
 	}
-	public void setTiempoDuracion(double tiempoDuracion) {
+	public void setTiempoDuracion(int tiempoDuracion) {
 		this.tiempoDuracion = tiempoDuracion;
 	}
 	public double getPrecio() {
