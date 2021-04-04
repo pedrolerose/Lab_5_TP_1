@@ -8,12 +8,10 @@ public class EntradaRecital extends Entrada implements IGenero{
 	
 	private boolean esVip;
 	private Banda banda;
-	private BandaSoporte bandaSoporte;
+	private BandaSoporte[] bandaSoporte;
 	private final int PRECIO_ENTRADA_VIP = 1500;
 	private final int PRECIO_ENTRADA_GRAL = 800;
 	private Genero Genero= new Genero() ;
-	
-	
 	
 	        private static final String G_Rock = "Rock";
 			private static final String G_Heavy_Metal = "Heavy_Metal";
@@ -27,7 +25,7 @@ public class EntradaRecital extends Entrada implements IGenero{
 	
 	
 
-	public EntradaRecital (Date fechaEv, int tiempoDuracionEv, boolean esVip,String Codigo_genero) {
+	public EntradaRecital (Date fechaEv, int tiempoDuracionEv, boolean esVip,String Codigo_genero, Banda bandaPpal, BandaSoporte[]bandasSoporte) {
 		
 		super(fechaEv, tiempoDuracionEv);
 		
@@ -42,6 +40,8 @@ public class EntradaRecital extends Entrada implements IGenero{
 			this.setEsVip(esVip);
 			this.setPrecio(PRECIO_ENTRADA_GRAL);
 		}
+		this.setBanda(bandaPpal);
+		this.setBandaSoporte(bandasSoporte);
 		
 	}
 	
@@ -67,12 +67,12 @@ public class EntradaRecital extends Entrada implements IGenero{
 	}
 
 
-	public BandaSoporte getBandaSoporte() {
+	public BandaSoporte[] getBandaSoporte() {
 		return bandaSoporte;
 	}
 
 
-	public void setBandaSoporte(BandaSoporte bandaSoporte) {
+	public void setBandaSoporte(BandaSoporte[] bandaSoporte) {
 		this.bandaSoporte = bandaSoporte;
 	}
 	
@@ -129,6 +129,10 @@ public class EntradaRecital extends Entrada implements IGenero{
 
 	public String toString() {
 		String tipoDeEntrada= "";
+		String bandasSoporte ="";
+		for(int i = 0;i<this.getBandaSoporte().length;i++) {
+			bandasSoporte += this.getBandaSoporte()[i].toString() + ". ";
+		}
 		
 		if(this.isVip()) {
 			tipoDeEntrada = "VIP"; 
@@ -137,6 +141,8 @@ public class EntradaRecital extends Entrada implements IGenero{
 		}
 		
 		return "Id de entrada: " + this.getId() + " \n" 
+				+ "Banda: "+ this.getBanda().toString() + " \n"
+				+ "Bandas Soporte: "+ bandasSoporte + " \n"
 				+ "Genero: " + this.Genero.getDescripcion()+ " \n"
  				+ "Precio: $" + this.getPrecio() + " \n"
 				+ "Duracion: " + this.getTiempoDuracion() + " minutos \n"

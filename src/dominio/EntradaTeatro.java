@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class EntradaTeatro extends Entrada implements IGenero {
 
-	private String actorPrincipal;
+	private String [] actorPrincipal;
 	private final double PRECIO_FIJO_ENTRADA = 1350.50;
 	
 	private Genero Genero= new Genero() ;
@@ -14,7 +14,7 @@ public class EntradaTeatro extends Entrada implements IGenero {
 	private static final String G_Comedia = "Comedia";
 	
 
-	public EntradaTeatro(Date fechaEv, int tiempoDuracionEv,String actorPrincipalEv, String Codigo_genero) {
+	public EntradaTeatro(Date fechaEv, int tiempoDuracionEv,String [] actorPrincipalEv, String Codigo_genero) {
 		super(fechaEv, tiempoDuracionEv);
 		
 		this.Genero.setDescripcion(this.Obtener_Genero(Codigo_genero));
@@ -23,11 +23,11 @@ public class EntradaTeatro extends Entrada implements IGenero {
 		this.actorPrincipal = actorPrincipalEv;
 	}
 	
-	public String getActorPrincipal() {
+	public String[] getActorPrincipal() {
 		return actorPrincipal;
 	}
 
-	public void setActorPrincipal(String actorPrincipal) {
+	public void setActorPrincipal(String[] actorPrincipal) {
 		this.actorPrincipal = actorPrincipal;
 	}
 	
@@ -63,11 +63,17 @@ String Tipo_Genero;
 	
 	@Override
 	public String toString() {
+		String actores ="";
+		for(int i = 0;i<this.getActorPrincipal().length;i++) {
+			actores += this.getActorPrincipal()[i] + ". ";
+		}
+		
 		return "Id de entrada: " + this.getId() + " \n" 
 				+ "Genero: " + this.Genero.getDescripcion()+ " \n"
  				+ "Precio: $" + this.getPrecio() + " \n"
 				+ "Duracion: " + this.getTiempoDuracion() + " minutos \n"
-				+ "Actores principales: " + this.getActorPrincipal()+ "\n -------------------------- \n";
+				+ "Actores principales: "+ actores; 
+				
 	}
 
 

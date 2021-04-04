@@ -1,6 +1,6 @@
 package dominio;
 
-public class Genero extends EntidadBase {
+public class Genero {
 	
 	    //properties
 	
