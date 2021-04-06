@@ -51,6 +51,7 @@ public String toString() {
 	}
 	
 	return "Id de entrada: " + this.getId() + " \n" 
+			+ "Precio: $" + this.getPrecio() + " \n"
 			+ "Tipo Evento: " + TIPOEVENTO + " \n"
 			+ "Nombre del Evento: " + this.getNombreEvento() + " \n"
 			+ "Precio: $" + this.getPrecio() + " \n"

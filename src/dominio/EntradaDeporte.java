@@ -19,6 +19,7 @@ public class EntradaDeporte extends Entrada {
 	public EntradaDeporte(Date fechaEv, int tiempoDuracionEv, String nombreEventoEv, String tipoDeporteEv, boolean nacionalEv) {
 		
 		super(fechaEv, tiempoDuracionEv, nombreEventoEv);
+		
 		this.setNacional(nacionalEv);
 		switch (tipoDeporteEv) {
 		
@@ -81,6 +82,7 @@ public class EntradaDeporte extends Entrada {
 		}
 		
 		return "Id de entrada: " + this.getId() + " \n" 
+				+ "Tipo de deporte: " + this.getTipoDeporte() + " \n"
 				+ "Tipo de evento: " + TIPOEVENTO  + " \n"
 				+ "Nombre del Evento: " + this.getNombreEvento() + " \n"
 				+ "Tipo de deporte: " + this.getTipoDeporte() + " \n"

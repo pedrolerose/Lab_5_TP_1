@@ -9,3 +9,5 @@ public interface IGenero {
 	public String Obtener_Genero(String Codigo_Genero);
 	
 }
+
+

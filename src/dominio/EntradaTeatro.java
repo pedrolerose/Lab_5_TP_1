@@ -70,6 +70,8 @@ String Tipo_Genero;
 		}
 		
 		return "Id de entrada: " + this.getId() + " \n" 
+	+ "Genero: " + this.Genero.getDescripcion()+ " \n"
+ 				+ "Precio: $" + this.getPrecio() + " \n"
 				+ "Tipo de Evento: " + TIPOEVENTO + " \n"
 				+ "Nombre del Evento: " + this.getNombreEvento() + " \n"
 				+ "Genero: " + this.Genero.getDescripcion()+ " \n"

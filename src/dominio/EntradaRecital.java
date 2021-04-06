@@ -23,8 +23,6 @@ public class EntradaRecital extends Entrada implements IGenero{
 	
 	
 	//constructors
-	
-	
 
 	public EntradaRecital (Date fechaEv, int tiempoDuracionEv,String nombreEventoEv, boolean esVip,String Codigo_genero, Banda bandaPpal, BandaSoporte[]bandasSoporte) {
 		
