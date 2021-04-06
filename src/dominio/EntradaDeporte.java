@@ -13,20 +13,15 @@ public class EntradaDeporte extends Entrada {
 	private final String OPCION_FUTBOL = "Futbol";
 	private final String OPCION_RUGBY  = "Rugby";
 	private final String OPCION_HOCKEY = "Hockey";
-<<<<<<< HEAD
 	
-	
-	public EntradaDeporte(Date fechaEv, int tiempoDuracionEv, String tipoDeporteEv, boolean nacionalEv) {
 		
-		super(fechaEv, tiempoDuracionEv);
-=======
 	private final static String TIPOEVENTO = "DEPORTE";
 	
 	
 	public EntradaDeporte(Date fechaEv, int tiempoDuracionEv, String nombreEventoEv, String tipoDeporteEv, boolean nacionalEv) {
 		
 		super(fechaEv, tiempoDuracionEv, nombreEventoEv);
->>>>>>> b26a69ba8cc217fa350c11f27ce6989a10caf335
+
 		this.setNacional(nacionalEv);
 		switch (tipoDeporteEv) {
 		
@@ -89,14 +84,11 @@ public class EntradaDeporte extends Entrada {
 		}
 		
 		return "Id de entrada: " + this.getId() + " \n" 
-<<<<<<< HEAD
 				+ "Tipo de deporte: " + this.getTipoDeporte() + " \n"
-=======
 				+ "Tipo de evento: " + TIPOEVENTO  + " \n"
 				+ "Nombre del Evento: " + this.getNombreEvento() + " \n"
 				+ "Tipo de deporte: " + this.getTipoDeporte() + " \n"
 				+ "Fecha Evento: " + this.getFecha() + " \n"
->>>>>>> b26a69ba8cc217fa350c11f27ce6989a10caf335
  				+ "Precio: $" + this.getPrecio() + " \n"
 				+ "Duracion: " + this.getTiempoDuracion() + " minutos \n"
 				+ "Nacional: " + isNacional + "\n -------------------------- \n";
