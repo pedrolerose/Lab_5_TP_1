@@ -19,25 +19,16 @@ public class EntradaRecital extends Entrada implements IGenero{
 			private static final String G_Trap = "Trap";
 			private static final String G_Latinos = "Latinos";
 			private static final String G_Pop = "Pop";
-<<<<<<< HEAD
-=======
 			private final static String TIPOEVENTO = "RECITAL";
->>>>>>> b26a69ba8cc217fa350c11f27ce6989a10caf335
 	
 	
 	//constructors
 	
 	
 
-<<<<<<< HEAD
-	public EntradaRecital (Date fechaEv, int tiempoDuracionEv, boolean esVip,String Codigo_genero, Banda bandaPpal, BandaSoporte[]bandasSoporte) {
-		
-		super(fechaEv, tiempoDuracionEv);
-=======
 	public EntradaRecital (Date fechaEv, int tiempoDuracionEv,String nombreEventoEv, boolean esVip,String Codigo_genero, Banda bandaPpal, BandaSoporte[]bandasSoporte) {
 		
 		super(fechaEv, tiempoDuracionEv, nombreEventoEv);
->>>>>>> b26a69ba8cc217fa350c11f27ce6989a10caf335
 		
 		
 		
@@ -151,19 +142,13 @@ public class EntradaRecital extends Entrada implements IGenero{
 		}
 		
 		return "Id de entrada: " + this.getId() + " \n" 
-<<<<<<< HEAD
-=======
 				+ "Tipo de Evento: " + TIPOEVENTO + " \n"
 				+ "Nombre del Evento: " + this.getNombreEvento() + " \n"
->>>>>>> b26a69ba8cc217fa350c11f27ce6989a10caf335
 				+ "Banda: "+ this.getBanda().toString() + " \n"
 				+ "Bandas Soporte: "+ bandasSoporte + " \n"
 				+ "Genero: " + this.Genero.getDescripcion()+ " \n"
  				+ "Precio: $" + this.getPrecio() + " \n"
-<<<<<<< HEAD
-=======
  		 		+ "Fecha: " + this.getFecha() + " \n"
->>>>>>> b26a69ba8cc217fa350c11f27ce6989a10caf335
 				+ "Duracion: " + this.getTiempoDuracion() + " minutos \n"
 				+ "Tipo: " + tipoDeEntrada + "\n -------------------------- \n";
 	}
