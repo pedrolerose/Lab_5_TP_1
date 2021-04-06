@@ -6,6 +6,10 @@ public class EntradaTeatro extends Entrada implements IGenero {
 
 	private String [] actorPrincipal;
 	private final double PRECIO_FIJO_ENTRADA = 1350.50;
+<<<<<<< HEAD
+=======
+	private final static String TIPOEVENTO = "TEATRO";
+>>>>>>> b26a69ba8cc217fa350c11f27ce6989a10caf335
 	
 	private Genero Genero= new Genero() ;
 	
@@ -14,8 +18,13 @@ public class EntradaTeatro extends Entrada implements IGenero {
 	private static final String G_Comedia = "Comedia";
 	
 
+<<<<<<< HEAD
 	public EntradaTeatro(Date fechaEv, int tiempoDuracionEv,String [] actorPrincipalEv, String Codigo_genero) {
 		super(fechaEv, tiempoDuracionEv);
+=======
+	public EntradaTeatro(Date fechaEv, int tiempoDuracionEv, String nombreEventoEv, String [] actorPrincipalEv, String Codigo_genero) {
+		super(fechaEv, tiempoDuracionEv, nombreEventoEv);
+>>>>>>> b26a69ba8cc217fa350c11f27ce6989a10caf335
 		
 		this.Genero.setDescripcion(this.Obtener_Genero(Codigo_genero));
 
@@ -69,8 +78,16 @@ String Tipo_Genero;
 		}
 		
 		return "Id de entrada: " + this.getId() + " \n" 
+<<<<<<< HEAD
 				+ "Genero: " + this.Genero.getDescripcion()+ " \n"
  				+ "Precio: $" + this.getPrecio() + " \n"
+=======
+				+ "Tipo de Evento: " + TIPOEVENTO + " \n"
+				+ "Nombre del Evento: " + this.getNombreEvento() + " \n"
+				+ "Genero: " + this.Genero.getDescripcion()+ " \n"
+ 				+ "Precio: $" + this.getPrecio() + " \n"
+ 		 		+ "Fecha: " + this.getFecha() + " \n"
+>>>>>>> b26a69ba8cc217fa350c11f27ce6989a10caf335
 				+ "Duracion: " + this.getTiempoDuracion() + " minutos \n"
 				+ "Actores principales: "+ actores; 
 				
