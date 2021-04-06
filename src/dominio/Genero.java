@@ -1,8 +1,10 @@
 package dominio;
 
-public class Genero extends EntidadBase {
+public class Genero {
 	
 	    //properties
+	
+	  		
 		private String descripcion;
 
 		//getters and setters
@@ -14,5 +16,11 @@ public class Genero extends EntidadBase {
 			this.descripcion = descripcion;
 		}
 
+		@Override
+		public String toString() {
+			return "Genero: " + descripcion ;
+		}
+
+		
 	
 }
